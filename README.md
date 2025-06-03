@@ -38,9 +38,9 @@ La función:
 ```python
 analisis_cajas(archivo_excel, sucursal='COYOACAN', max_cajas=10)
 ```
--archivo_excel: 
--sucursal: sucursal que se desea analizar
--max_cajas: máximo número de cajas por sucursal
+- archivo_excel: 
+- sucursal: sucursal que se desea analizar
+- max_cajas: máximo número de cajas por sucursal
 
 ## Escalabilidad
 
