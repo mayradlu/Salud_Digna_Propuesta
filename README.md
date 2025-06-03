@@ -1,6 +1,6 @@
 # Salud Digna: Propuesta de Mejora
 
-# Análisis de Apertura y Cierres de Cajas
+# Apertura y Cierres de Cajas
 
 Esta carpeta contiene una función llamada `analisis_cajas` que realiza un análisis predictivo del número de cajas que deben abrirse o cerrarse por hora, basándose en datos históricos de llegadas de clientes.
 
