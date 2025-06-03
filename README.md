@@ -35,5 +35,5 @@ La función:
 ```python
 analisis_cajas(archivo_excel, sucursal='COYOACAN', max_cajas=10)
 
-
+## Escalabilidad
 
