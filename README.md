@@ -1,4 +1,4 @@
-# Salud Digna: Propuesta de Mejora
+# Salud Digna: Propuestas de Mejora
 
 # Fila de Espera
 
