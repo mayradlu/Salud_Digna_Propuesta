@@ -92,7 +92,7 @@ Se implementa una simulación discreta basada en eventos con programación diná
      - El menor tiempo de terminación proyectado
 
 
-## ⏳ Complejidad Computacional
+## Complejidad Computacional
 
 Para un conjunto de `n` pacientes, cada uno con `k` servicios, se tienen:
 
@@ -106,5 +106,6 @@ Para un conjunto de `n` pacientes, cada uno con `k` servicios, se tienen:
 
 Este enfoque es **eficiente y escalable** para clínicas con volumen moderado (hasta cientos de pacientes por día).
 
+## Requisitos
 
-
+## Uso
