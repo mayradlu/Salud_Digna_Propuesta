@@ -32,8 +32,8 @@ La función:
 
 ## Parámetros de la función
 
-```python```
-analisis_cajas(archivo_excel, sucursal='COYOACAN', max_cajas=10)```
+```python
+analisis_cajas(archivo_excel, sucursal='COYOACAN', max_cajas=10)
 
 ## Escalabilidad
 
