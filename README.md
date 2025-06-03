@@ -32,6 +32,9 @@ La función:
 
 ## Parámetros de la función
 
+```python
+# Ejecutar el análisis con tus parámetros personalizados
+archivo_excel = "coyoacan.xlsx"
 analisis_cajas(archivo_excel, sucursal='COYOACAN', max_cajas=10)
 
 
