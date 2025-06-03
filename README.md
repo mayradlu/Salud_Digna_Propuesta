@@ -36,7 +36,7 @@ La función:
 # Ejecutar el análisis con tus parámetros personalizados
 archivo_excel = "coyoacan.xlsx"
 analisis_cajas(archivo_excel, sucursal='COYOACAN', max_cajas=10)
-
+```
 
 ## Escalabilidad
 
