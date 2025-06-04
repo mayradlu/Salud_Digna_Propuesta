@@ -52,7 +52,7 @@ analisis_cajas(archivo_excel, sucursal='COYOACAN', max_cajas=10)
 ## Uso
 Clona el repositorio y los requerimientos
 ```python
-git clone 
+git clone git clone https://github.com/mayradlu/Salud_Digna_Propuesta.git
 pip install -r requirements.txt
 ```
 
