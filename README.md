@@ -176,6 +176,8 @@ Se implementa una simulación discreta basada en eventos con programación diná
      - La disponibilidad de salas
      - El menor tiempo de terminación proyectado
 
+![imagen](https://github.com/user-attachments/assets/0a7b4056-5fff-4711-851e-d460983778c9)
+
 
 ## Complejidad Computacional
 
