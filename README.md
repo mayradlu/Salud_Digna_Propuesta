@@ -60,21 +60,28 @@ pip install -r requirements.txt
 
 # Ruta crítica de servicios
 
-En muchas clínicas, los pacientes deben recibir múltiples servicios (laboratorio, rayos X, nutrición, etc.) durante una sola visita. Sin embargo, el orden de atención no está optimizado, lo que genera:
+En muchas clínicas, los pacientes deben recibir múltiples servicios (laboratorio, rayos X, nutrición, etc.) durante una sola visita. Sin embargo, el orden de atención no está optimizado, lo que provoca:
+-Tiempos de espera innecesarios
+-Uso subóptimo de recursos (salas)
+-Cuellos de botella y saturación del sistema
 
-- Tiempos de espera innecesarios  
-- Uso subóptimo de recursos (salas)  
-- Congestionamientos y cuellos de botella  
-
-El objetivo del algoritmo es asignar de forma dinámica y eficiente el orden de servicios para cada paciente, considerando la disponibilidad de salas, la duración estimada de los servicios y la posibilidad de adaptación en tiempo real.
+Este proyecto propone un algoritmo que asigna dinámicamente el orden y sala de atención para cada paciente, considerando:
+-Lista personalizada de servicios por paciente
+-Múltiples salas por tipo de servicio
+-Disponibilidad de recursos en tiempo real
+-Minimización del tiempo total de permanencia (makespan)
 
 ## Metodología
 
-Este problema se modela como una extensión del clásico **Job Shop Scheduling Problem (JSSP)**, donde:
+Este problema se modela como una extensión del Job Shop Scheduling Problem (JSSP), donde:
+-Cada paciente = un “trabajo”
+-Cada servicio = una “máquina”
+-Objetivo = minimizar el makespan (tiempo total en clínica)
 
-- Cada **paciente** representa *trabajo*  
-- Cada **servicio** representa una *máquina*  
-- Se busca minimizar el **makespan** (tiempo total de permanencia del paciente en la clínica)
+Por ello, el enfoque combina:
+-Rolling Horizon Scheduling (decisiones paso a paso)
+-Simulación Discreta de Eventos (DES)
+-Sistemas de colas con múltiples servidores (salas por servicio)
 
 ## Algoritmo: DES-Rolling
 
@@ -116,5 +123,11 @@ O(nk^2)
 Este enfoque es **eficiente y escalable** para clínicas con volumen moderado (hasta cientos de pacientes por día).
 
 ## Requisitos
+-Python 3.8+
+-`numpy`
+-`heapq`
+-`pandas` 
+-`matplotlib` 
+
 
 ## Uso
