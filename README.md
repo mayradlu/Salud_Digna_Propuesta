@@ -63,10 +63,12 @@ El algoritmo es una variación del modelo **Earliest Deadline First (EDF)** modi
 
 ### Complejidad teórica:
 El peor caso posible del algoritmo en términos de crecimiento del tiempo de ejecución o uso de memoria, en función del tamaño de entrada es
+
 $$O(T × C × P log P)$$
 
 ### Complejidad práctica:
 En pruebas reales con 1200 pacientes y simulación por minuto, el algoritmo corre en 1 segundo o menos.
+
 $$O(P log P + C × T)$$
 
 # Apertura y Cierres de Cajas
