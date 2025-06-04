@@ -90,20 +90,19 @@ Se implementa una simulación discreta basada en eventos con programación diná
 ### Etapas del algoritmo:
 
 1. **Inicialización**
-   - Se define un tiempo base (ej. 08:00 AM)
-   - Se establece un mapa de duración promedio por servicio
-   - Se inicializa el estado de ocupación de las salas
+   -Se definen M salas por servicio con disponibilidad inicial a partir de la hora de apertura.
+   -Se genera una cola de eventos, incluyendo la llegada de pacientes (cada 5 minutos en simulación).
 
-2. **Llegadas Programadas**
-   - Cada paciente entra al sistema cada 5 minutos (simulado)
-   - Se genera un evento de tipo "arrival" en la cola de eventos
+3. **Cola de eventos**
+  -Arrival: El paciente entra al sistema y se programa su primer servicio.
+  -Service: Al finalizar un servicio, se evalúa y agenda el siguiente de forma óptima.
 
-3. **Procesamiento de Eventos**
+4. **Procesamiento de Eventos**
    - Si el evento es "arrival", se programa el primer servicio
    - Si el evento es "service", se asigna la sala más pronta disponible
    - Se calcula el tiempo estimado de finalización + buffer y se agenda el siguiente servicio
 
-4. **Rolling Decision**
+5. **Rolling Decision**
    - En cada paso, se evalúa el siguiente servicio óptimo para cada paciente en función de:
      - Su estado actual
      - La disponibilidad de salas
@@ -131,3 +130,8 @@ Este enfoque es **eficiente y escalable** para clínicas con volumen moderado (h
 
 
 ## Uso
+Clona el repositorio y los requerimientos
+```python
+git clone git clone https://github.com/mayradlu/Salud_Digna_Propuesta.git
+pip install -r requirements.txt
+```
