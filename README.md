@@ -111,9 +111,7 @@ Para un conjunto de `n` pacientes, cada uno con `k` servicios, se tienen:
 - Cada evento puede requerir analizar hasta `k` servicios disponibles  
 
 **Complejidad total:**  
-$$
-\mathcal{O}(nk^2)
-$$
+O(nk^2)
 
 Este enfoque es **eficiente y escalable** para clínicas con volumen moderado (hasta cientos de pacientes por día).
 
