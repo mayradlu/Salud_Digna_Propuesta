@@ -44,6 +44,11 @@ analisis_cajas(archivo_excel, sucursal='COYOACAN', max_cajas=10)
 
 ## Escalabilidad
 
+- Mayor rango temporal (más de 1 mes de análisis)
+- Con un mayor rango se puede predecir con base a distribuciones
+- Análisis por turnos (mañana, tarde, noche)
+
+
 ## Uso
 
 
