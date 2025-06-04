@@ -29,7 +29,7 @@ El algoritmo es una variación del modelo **Earliest Deadline First (EDF)** modi
   Por cada instante de tiempo (minuto o segundo), se asignan pacientes a cajas libres considerando deadline y prioridad.
 
 
-## 🧠 Lógica del algoritmo
+## Lógica del algoritmo
 
 1. **Preparación:** Se ordenan los pacientes por hora de llegada (`TurnoHoraInicioDT`) y se calcula su prioridad, duración estimada y deadline (hora + 20 min).
 2. **Simulación:**  
