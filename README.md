@@ -38,7 +38,7 @@ La función:
 ```python
 analisis_cajas(archivo_excel, sucursal='COYOACAN', max_cajas=10)
 ```
-- archivo_excel: 
+- archivo_excel: archivo a analizar 
 - sucursal: sucursal que se desea analizar
 - max_cajas: máximo número de cajas por sucursal
 
@@ -100,9 +100,9 @@ Para un conjunto de `n` pacientes, cada uno con `k` servicios, se tienen:
 - Cada evento puede requerir analizar hasta `k` servicios disponibles  
 
 **Complejidad total:**  
-\[
+$$
 \mathcal{O}(nk^2)
-\]
+$$
 
 Este enfoque es **eficiente y escalable** para clínicas con volumen moderado (hasta cientos de pacientes por día).
 
