@@ -50,6 +50,11 @@ analisis_cajas(archivo_excel, sucursal='COYOACAN', max_cajas=10)
 
 
 ## Uso
+Clona el repositorio y los requerimientos
+```python
+git clone https://github.com/tu_usuario/tu_repositorio.git
+pip install -r requirements.txt
+```
 
 
 # Ruta crítica de servicios
