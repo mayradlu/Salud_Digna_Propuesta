@@ -2,6 +2,72 @@
 
 # Fila de Espera
 
+En entornos clínicos, el tiempo de espera es un factor crítico para la experiencia del paciente y la eficiencia operativa. Las filas suelen procesarse bajo esquemas simples como FIFO (primero en llegar, primero en pasar), sin considerar:
+- El tipo de paciente (citado, general, con movilidad limitada),
+- El tiempo que ya lleva esperando,
+- Y la duración real de su atención.
+
+Este algoritmo combina principios de **priorización, deadline handling y duración real** para minimizar el tiempo de espera y distribuir mejor los recursos de atención.
+
+
+## Descripción del algoritmo
+
+El algoritmo es una variación del modelo **Earliest Deadline First (EDF)** modificado con:
+
+- **Priorización por turno:**  
+  - `C` = Citados → prioridad alta (duración breve, 1 min)  
+  - `P` = Embarazadas, adultos mayores y personas con poco movilidad → prioridad media  
+  - Otros = prioridad baja
+
+- **Deadline dinámico:**  
+  Cada paciente tiene un "límite de espera aceptable" de 20 minutos. El algoritmo intenta evitar que cualquier paciente supere ese tiempo.
+
+- **Duración real de atención:**  
+  Se usa la columna `TAPRrecepcionMinutos` para conocer cuánto ocupará cada paciente en caja, lo que permite una simulación más precisa. Para los casos en el que no teniamos esta información, se considero un tiempo promedio de atención en caja 1 minuto para pacientes con cita y 5 minutos para los demás paciente.
+
+- **Asignación de cajas disponibles:**  
+  Por cada instante de tiempo (minuto o segundo), se asignan pacientes a cajas libres considerando deadline y prioridad.
+
+
+## 🧠 Lógica del algoritmo
+
+1. **Preparación:** Se ordenan los pacientes por hora de llegada (`TurnoHoraInicioDT`) y se calcula su prioridad, duración estimada y deadline (hora + 20 min).
+2. **Simulación:**  
+   - A cada instante (ej. minuto), se revisan todas las cajas.
+   - Si una caja está libre, se elige el paciente con:
+     - Deadline más cercano  
+     - Y, en caso de empate, mayor prioridad  
+   - Se asigna a la caja, se registra el tiempo de espera y se actualiza su tiempo de liberación.
+3. **Final:** Se genera una tabla con los tiempos reales de espera, hora en la que pasó a caja y caja asignada.
+
+---
+
+## Beneficios de implementar el algoritmo
+
+- **Reducción significativa del tiempo de espera promedio**
+- **Minimiza pacientes con espera > 20 minutos** (Value at Risk)
+- **Respeta la prioridad de pacientes citados**
+- **Permite simular distintas configuraciones (cajas, turnos, horarios)**
+- **Escalable y adaptable por sucursal o por hora**
+- **Mejora la calidad percibida del servicio sin aumentar recursos**
+
+---
+
+## Complejidad computacional
+
+| Variable | Significado |
+|----------|-------------|
+| `P` | Número de pacientes |
+| `C` | Número de cajas |
+| `T` | Intervalos simulados (minutos o segundos del día) |
+
+### Complejidad teórica:
+El peor caso posible del algoritmo en términos de crecimiento del tiempo de ejecución o uso de memoria, en función del tamaño de entrada es
+$$O(T × C × P log P)$$
+
+### Complejidad práctica:
+En pruebas reales con 1200 pacientes y simulación por minuto, el algoritmo corre en 1 segundo o menos.
+$$O(P log P + C × T)$$
 
 # Apertura y Cierres de Cajas
 
